@@ -11,6 +11,8 @@ Project was made using Unity 2019.4.0f1 but it should run on Unity 2017+ no prob
 ## Running the demo
 Clone the repo and open the folder in (ideally) latest Unity. Demo scene can be found in `Assets/Scenes/Demo.unity`
 
+You can also download the [.unitypackage](https://github.com/mkskelet/unity-dynamic-split/releases/tag/1.0.0) to integrate dynamic split screen into your project.
+
 ## Implementation in your project
 1. Drag `Split Screen Camera` prefab into your scene
 2. Assign Players and set PlayerCount either dynamically in runtime or before playing the scene
