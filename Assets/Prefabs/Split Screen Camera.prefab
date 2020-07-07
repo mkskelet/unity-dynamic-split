@@ -106,14 +106,13 @@ MonoBehaviour:
   SplitLineMaterial: {fileID: 2100000, guid: 4b92123fa800f604bb1ab8ad9a1fa580, type: 2}
   AlphaBlendMaterial: {fileID: 2100000, guid: ec41210da8880a347ba18a520270f076, type: 2}
   FxaaMaterial: {fileID: 2100000, guid: f1962b323a3394d458d87326d6fe2f48, type: 2}
-  LineColor: {r: 0, g: 0, b: 0, a: 1}
+  LineColor: {r: 0.7258187, g: 0.31763974, b: 0.8113208, a: 1}
   EnableFXAA: 1
-  PlayerCount: 0
-  Players: []
+  PlayerCount: 2
+  Players:
+  - {fileID: 0}
+  - {fileID: 0}
   EnableMerging: 1
-  EnableSmoothing: 0
-  SmoothTime: 0.03
-  MaxSpeed: 3
 --- !u!1001 &6482585662608061787
 PrefabInstance:
   m_ObjectHideFlags: 0
