@@ -16,6 +16,8 @@
 
     SubShader
     {
+        Tags { "RenderType" = "Geometry-1" }
+
         Stencil {
             Ref [_VoronoiCellsPlayerStencil]
             Comp [_VoronoiCellsStencilOp]
