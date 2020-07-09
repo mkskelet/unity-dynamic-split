@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
-using Vector4 = UnityEngine.Vector4;
 
 public class VoronoiSplit : MonoBehaviour
 {
@@ -46,7 +41,7 @@ public class VoronoiSplit : MonoBehaviour
 
     #endregion
 
-    #region Properties
+    #region Public Variables
 
     [Header("References")]
     public Camera MainCamera;
@@ -119,15 +114,17 @@ public class VoronoiSplit : MonoBehaviour
             return;
         }
 
-        if (playerTex != null)
-        {
-            playerTex.Release();
-        }
+        playerTex?.Release();
+        cellsTexture?.Release();
 
         playerTex = new RenderTexture(width, height, 32);
+        playerTex.name = "Player Render";
+
         PlayerCamera.targetTexture = playerTex;
 
-        cellsTexture = new RenderTexture(width, height, 0);
+        cellsTexture = new RenderTexture(width, height, 0, GraphicsFormat.R8_UNorm);
+        cellsTexture.name = "Cells Visualization Texture";
+
         SplitLineMaterial.SetTexture(SHADER_CELLS_STENCIL_TEX, cellsTexture);
         SplitLineMaterial.SetFloat(SHADER_LINE_THICKNESS, (float)height / 200);
 

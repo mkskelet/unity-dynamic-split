@@ -78,7 +78,7 @@
                 }
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed frag(v2f i) : SV_Target
             {
                 // player 1 is default
                 int player = 1;
@@ -95,7 +95,7 @@
 
                 if (_VoronoiCellsStencilOp == 0)
                 {
-                    return fixed4((float)player / 8, (float)player / 4, (float)player / 2, 1.0);
+					return 1 / player;
                 }
                 else
                 {
